@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Operacje na liczbie</title>
+</head>
+<body>
+
+<h2>Wyniki:</h2>
+<div id="wynik"></div>
+
+<script>
+let liczba;
+
+// pętla aż użytkownik poda poprawną liczbę całkowitą
+do {
+    liczba = prompt("Podaj liczbę całkowitą:");
+} while (isNaN(liczba) || liczba === "" || !Number.isInteger(Number(liczba)));
+
+liczba = parseInt(liczba);
+
+let wynik = "";
+
+wynik += "Wprowadzona liczba: " + liczba + "<br>";
+wynik += "Liczba o znaku przeciwnym: " + (-liczba) + "<br>";
+wynik += "Liczba powiększona o 15: " + (liczba + 15) + "<br>";
+wynik += "Liczba powiększona o 0.5: " + (liczba + 0.5) + "<br>";
+wynik += "Kwadrat liczby: " + (liczba * liczba) + "<br>";
+wynik += "Dzielenie przez 2: " + (liczba / 2) + "<br>";
+wynik += "Reszta z dzielenia przez 2: " + (liczba % 2) + "<br>";
+wynik += "Liczba o jeden większa: " + (liczba + 1) + "<br>";
+wynik += "Liczba o jeden mniejsza: " + (liczba - 1) + "<br>";
+
+wynik += "Podział przez 3 (w dół): " + Math.floor(liczba / 3) + "<br>";
+wynik += "Podział przez 3 (w górę): " + Math.ceil(liczba / 3) + "<br>";
+wynik += "Podział przez 3 (zaokrąglenie): " + Math.round(liczba / 3) + "<br>";
+
+wynik += "Pierwiastek z liczby: " + Math.sqrt(liczba) + "<br>";
+
+let losowa = Math.random() * 50;
+wynik += "Iloczyn z liczbą losową (0-50): " + (liczba * losowa) + "<br>";
+
+wynik += "Wartość bezwzględna: " + Math.abs(liczba) + "<br>";
+
+// wyświetlenie na stronie
+document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>
